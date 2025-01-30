@@ -1,0 +1,14 @@
+body {
+  background-color: #b0c2d5e0;
+}
+
+#taskForm, #taskList {
+background-color: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-body {
+padding: 20px;
+}

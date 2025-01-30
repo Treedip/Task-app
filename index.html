@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Task Management Application</h1>
+        
+        <!-- Add Task Form -->
+        <div id="taskForm" class="mb-4">
+            <h2>Add New Task</h2>
+            <form id="addTaskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Title</label>
+                    <input type="text" class="form-control" id="taskTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">Description</label>
+                    <textarea class="form-control" id="taskDescription" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="taskDueDate">Due Date</label>
+                    <input type="date" class="form-control" id="taskDueDate" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+        </div>
+
+        <!-- Task List -->
+        <div id="taskList">
+            <h2>Tasks</h2>
+            <ul class="list-group" id="tasks"></ul>
+        </div>
+    </div>
+
+    <!-- Task Details Modal -->
+    <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="taskModalLabel">Task Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editTaskForm">
+                        <div class="form-group">
+                            <label for="editTaskTitle">Title</label>
+                            <input type="text" class="form-control" id="editTaskTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editTaskDescription">Description</label>
+                            <textarea class="form-control" id="editTaskDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="dueDate">Due Date</label>
+                            <input type="text" class="form-control" id="dueDate" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="editTaskDueDate">Edit Due Date</label>
+                            <input type="date" class="form-control" id="editTaskDueDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="deleteTaskBtn">Delete Task</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
